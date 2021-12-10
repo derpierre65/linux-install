@@ -20,7 +20,7 @@ fi
 # php, mariadb-server, redis-server, 
 sudo apt -y install zsh git snapd openssl curl build-essential \
 	wget gnupg2 gnupg-agent dirmngr scdaemon hopenpgp-tools yubikey-personalization \
-	php-common php-curl php-json php-mbstring php-mysql php-xml php-zip php-swoole php-gd php-imagick \ php-redis \
+	php-common php-curl php-json php-mbstring php-mysql php-xml php-zip php-swoole php-gd php-imagick php-redis \
   redis-server \
   mariadb-server \
   flameshot \
