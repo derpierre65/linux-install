@@ -46,3 +46,18 @@ sudo apt-get install -y nodejs
 # discord, slack
 sudo snap install discord
 sudo snap install slack --classic
+sudo snap install postman
+
+# other tools
+sudo apt -y install obs-studio
+
+# jetbrains toolbox
+cd ~/
+wget https://download-cdn.jetbrains.com/toolbox/jetbrains-toolbox-1.22.10774.tar.gz
+chmod +x jetbrains-toolbox-1.22.10774.tar.gz
+tar -zxvf jetbrains-toolbox-1.22.10774.tar.gz
+cd jetbrains-toolbox-1.22.10774/
+./jetbrains-toolbox
+cd ..
+rm -R jetbrains-toolbox-1.22.10774
+rm jetbrains-toolbox-1.22.10774.tar.gz
