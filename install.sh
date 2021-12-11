@@ -51,6 +51,13 @@ sudo snap install postman
 # other tools
 sudo apt -y install obs-studio
 
+# add canoncial hostnames to ssh config
+echo 'CanonicalizeHostname yes
+CanonicalDomains own3d.tv own3d.dev stream.tv
+
+Host *
+    User root' >> ~/.ssh/config
+
 # docker & docker-compose
 sudo apt install docker
 sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
