@@ -49,7 +49,10 @@ sudo snap install slack --classic
 sudo snap install postman
 
 # other tools
-sudo apt -y install obs-studio
+sudo apt -y install \
+	obs-studio \
+	gnome-shell-extension-gpaste \
+	gnome-shell-extension-prefs
 
 # add canoncial hostnames to ssh config
 echo 'CanonicalizeHostname yes
@@ -59,7 +62,7 @@ Host *
     User root' >> ~/.ssh/config
 
 # docker & docker-compose
-sudo apt install docker
+sudo apt -y install docker
 sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 
