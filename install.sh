@@ -46,13 +46,6 @@ sudo apt-get install -y nodejs
 # discord, slack
 sudo snap install discord
 sudo snap install slack --classic
-sudo snap install postman
-
-# obs, gpaste
-sudo apt -y install \
-	obs-studio \
-	gnome-shell-extension-gpaste \
-	gnome-shell-extension-prefs
 
 # add canoncial hostnames to ssh config
 echo 'CanonicalizeHostname yes
@@ -81,12 +74,22 @@ rm jetbrains-toolbox-1.22.10774.tar.gz
 
 # other programs
 INSTALL_NAMES=(
+"OBS"
+"gpaste"
 "Thunderbird"
 "Keepass"
+"Lens"
+"Spotify"
+"Postman"
 );
 INSTALL_COMMANDS=(
-"sudo apt-get -y install thunderbird"
-"sudo apt-get -y install keepassx"
+"sudo apt -y install obs-studio"
+"sudo apt -y install gnome-shell-extension-gpaste gnome-shell-extension-prefs"
+"sudo apt -y install thunderbird"
+"sudo apt -y install keepassx"
+"snap install kontena-lens --classic"
+"snap install spotify"
+"sudo snap install postman"
 );
 
 arrayLength=${#INSTALL_COMMANDS[@]}
