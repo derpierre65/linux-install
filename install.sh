@@ -26,13 +26,12 @@ sudo apt -y install zsh git snapd openssl curl build-essential \
   flameshot \
   ffmpeg
 
-# cryptsetup
-# pcscd
-# secure-delete
+# cryptsetup, pcscd, secure-delete
 
 # install google chrome
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo apt install ./google-chrome-stable_current_amd64.deb
+sudo rm -f google-chrome-stable_current_amd64.deb
 
 # install composer v2
 curl -sS https://getcomposer.org/installer -o composer-setup.php
