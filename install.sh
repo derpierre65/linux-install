@@ -74,6 +74,7 @@ rm jetbrains-toolbox-1.22.10774.tar.gz
 
 # other programs
 INSTALL_NAMES=(
+"PhpStorm"
 "OBS"
 "gpaste"
 "Thunderbird"
@@ -83,6 +84,7 @@ INSTALL_NAMES=(
 "Postman"
 );
 INSTALL_COMMANDS=(
+"sudo snap install phpstorm --classic"
 "sudo apt -y install obs-studio"
 "sudo apt -y install gnome-shell-extension-gpaste gnome-shell-extension-prefs"
 "sudo apt -y install thunderbird"
@@ -95,7 +97,7 @@ INSTALL_COMMANDS=(
 arrayLength=${#INSTALL_COMMANDS[@]}
 for (( i=0; i<${arrayLength}; i++));
 do
-        read -e -p "Install ${INSTALL_NAMES[i]}? [Y/n] " YN
+        read -e -p "Install ${INSTALL_NAMES[i]} (${i}/${arrayLength})? [Y/n] " YN
         if ( [[ $YN == "y" || $YN == "Y" || $YN == "" ]] ) then
                 eval ${INSTALL_COMMANDS[i]}
         fi
