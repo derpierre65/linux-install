@@ -48,7 +48,7 @@ sudo snap install discord
 sudo snap install slack --classic
 sudo snap install postman
 
-# other tools
+# obs, gpaste
 sudo apt -y install \
 	obs-studio \
 	gnome-shell-extension-gpaste \
@@ -59,7 +59,9 @@ echo 'CanonicalizeHostname yes
 CanonicalDomains own3d.tv own3d.dev stream.tv
 
 Host *
-    User root' >> ~/.ssh/config
+    User root
+    ForwardAgent yes
+    IdentitiesOnly yes' >> ~/.ssh/config
 
 # docker & docker-compose
 sudo apt -y install docker
@@ -76,3 +78,22 @@ cd jetbrains-toolbox-1.22.10774/
 cd ..
 rm -R jetbrains-toolbox-1.22.10774
 rm jetbrains-toolbox-1.22.10774.tar.gz
+
+# other programs
+INSTALL_NAMES=(
+"Thunderbird"
+"Keepass"
+);
+INSTALL_COMMANDS=(
+"sudo apt-get -y install thunderbird"
+"sudo apt-get -y install keepassx"
+);
+
+arrayLength=${#INSTALL_COMMANDS[@]}
+for (( i=0; i<${arrayLength}; i++));
+do
+        read -e -p "Install ${INSTALL_NAMES[i]}? [Y/n] " YN
+        if ( [[ $YN == "y" || $YN == "Y" || $YN == "" ]] ) then
+                eval ${INSTALL_COMMANDS[i]}
+        fi
+done
