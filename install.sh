@@ -101,3 +101,20 @@ do
                 eval ${INSTALL_COMMANDS[i]}
         fi
 done
+
+# other settings
+INSTALL_NAMES=(
+"Show seconds in clock?"
+);
+INSTALL_COMMANDS=(
+"gsettings set org.gnome.desktop.interface clock-show-seconds true"
+);
+
+arrayLength=${#INSTALL_COMMANDS[@]}
+for (( i=0; i<${arrayLength}; i++));
+do
+        read -e -p "${INSTALL_NAMES[i]} [Y/n] " YN
+        if ( [[ $YN == "y" || $YN == "Y" || $YN == "" ]] ) then
+                eval ${INSTALL_COMMANDS[i]}
+        fi
+done
