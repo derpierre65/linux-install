@@ -28,6 +28,7 @@ INSTALL_NAMES=(
 "mariadb-server"
 "php composer"
 "nginx"
+"certbot"
 );
 
 INSTALL_COMMANDS=(
@@ -37,6 +38,7 @@ INSTALL_COMMANDS=(
 "apt -y install mariadb-server"
 "curl -sS https://getcomposer.org/installer -o composer-setup.php && php composer-setup.php --install-dir=/usr/local/bin --filename=composer && rm composer-setup.php"
 "apt -y install nginx"
+"apt -y install snapd; sudo snap install core; sudo snap refresh core; sudo snap install --classic certbot; sudo ln -s /snap/bin/certbot /usr/bin/certbot"
 );
 
 arrayLength=${#INSTALL_COMMANDS[@]}
