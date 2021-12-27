@@ -17,12 +17,10 @@ if ! grep -q "^deb .*$PHP_PPA" /etc/apt/sources.list /etc/apt/sources.list.d/*; 
     add-apt-repository ppa:ondrej/php
 fi
 
-apt
-
 # install base stuff
 apt -y install git curl build-essential wget
 
-# other programs
+# install services
 INSTALL_NAMES=(
 "nodejs"
 "php"
@@ -31,6 +29,7 @@ INSTALL_NAMES=(
 "php composer"
 "nginx"
 );
+
 INSTALL_COMMANDS=(
 "(curl -fsSL https://deb.nodesource.com/setup_17.x | sudo -E bash -) && apt-get install -y nodejs"
 "apt -y install php-common php-curl php-json php-mbstring php-mysql php-xml php-zip php-gd php-imagick php-redis"
