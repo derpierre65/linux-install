@@ -29,6 +29,8 @@ INSTALL_NAMES=(
 "php composer"
 "nginx"
 "certbot"
+"htop"
+"deployer"
 );
 
 INSTALL_COMMANDS=(
@@ -39,6 +41,8 @@ INSTALL_COMMANDS=(
 "curl -sS https://getcomposer.org/installer -o composer-setup.php && php composer-setup.php --install-dir=/usr/local/bin --filename=composer && rm composer-setup.php"
 "apt -y install nginx"
 "apt -y install snapd; sudo snap install core; sudo snap refresh core; sudo snap install --classic certbot; sudo ln -s /snap/bin/certbot /usr/bin/certbot"
+"apt -y install htop"
+"curl -LO https://deployer.org/deployer.phar; mv deployer.phar /usr/local/bin/dep; chmod +x /usr/local/bin/dep"
 );
 
 arrayLength=${#INSTALL_COMMANDS[@]}
