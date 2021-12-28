@@ -10,15 +10,15 @@ fi
 LC_ALL=C.UTF-8
 PHP_PPA="ondrej/php"
 
+# install base stuff
+apt -y install git curl build-essential wget software-properties-common
+
 mkdir -p /etc/apt/sources.list.d/
 
 if ! grep -q "^deb .*$PHP_PPA" /etc/apt/sources.list /etc/apt/sources.list.d/*; then
     # commands to add the ppa ...
     add-apt-repository ppa:ondrej/php
 fi
-
-# install base stuff
-apt -y install git curl build-essential wget
 
 # install services
 INSTALL_NAMES=(
