@@ -42,13 +42,9 @@ rm composer-setup.php
 curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
 sudo apt-get install -y nodejs
 
-# discord, slack
-sudo snap install discord
-sudo snap install slack --classic
-
 # add canoncial hostnames to ssh config
 echo 'CanonicalizeHostname yes
-CanonicalDomains own3d.tv own3d.dev stream.tv
+#CanonicalDomains
 
 Host *
     User root
@@ -81,6 +77,8 @@ INSTALL_NAMES=(
 "Lens"
 "Spotify"
 "Postman"
+"Discord"
+"Slack"
 );
 INSTALL_COMMANDS=(
 "sudo snap install phpstorm --classic"
@@ -91,6 +89,8 @@ INSTALL_COMMANDS=(
 "snap install kontena-lens --classic"
 "snap install spotify"
 "sudo snap install postman"
+"sudo snap install discord"
+"sudo snap install slack --classic"
 );
 
 arrayLength=${#INSTALL_COMMANDS[@]}
