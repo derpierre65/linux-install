@@ -20,7 +20,7 @@ TOOLBOX_VERSION=1.26.4.13374
 # php, mariadb-server, redis-server, 
 sudo apt -y install zsh git snapd openssl curl build-essential libfuse2 \
 	wget gnupg2 gnupg-agent dirmngr scdaemon hopenpgp-tools yubikey-personalization \
-	php php-common php-curl php-json php-mbstring php-mysql php-xml php-zip php-swoole php-gd php-imagick php-redis \
+	php php-common php-curl php-json php-mbstring php-mysql php-xml php-zip php-gd php-imagick php-redis \
   redis-server \
   mariadb-server \
   flameshot \
@@ -67,6 +67,7 @@ INSTALL_NAMES=(
 "Docker Compose"
 "Google Chrome"
 "Node.js"
+"PHP: Swoole"
 );
 INSTALL_COMMANDS=(
 "sudo snap install phpstorm --classic"
@@ -83,6 +84,7 @@ INSTALL_COMMANDS=(
 "sudo curl -L https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose && sudo chmod +x /usr/local/bin/docker-compose"
 "wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && sudo apt install ./google-chrome-stable_current_amd64.deb && sudo rm -f google-chrome-stable_current_amd64.deb"
 "curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash - && sudo apt-get install -y nodejs"
+"sudo apt -y install php-swoole"
 );
 
 arrayLength=${#INSTALL_COMMANDS[@]}
